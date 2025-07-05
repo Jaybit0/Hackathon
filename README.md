@@ -108,8 +108,5 @@ We welcome contributions to this project! Please see `CONTRIBUTING.md` (to be cr
 ## License
 
 This project is licensed under the [MIT License](LICENSE) (to be created).
-# Get Start
-```bash
-python -m uvicorn simple_search_server:app --host 0.0.0.0 --port 8000 --reload
-```
+
 
