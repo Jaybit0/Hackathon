@@ -18,6 +18,41 @@ load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 GOOGLE_CSE_ID = os.getenv("GOOGLE_CSE_ID")
 
+# Custom entries configuration
+CUSTOM_ENTRIES = {
+    "openai": [
+        {
+            "title": "🚀 OpenAI Official Documentation",
+            "link": "https://platform.openai.com/docs",
+            "snippet": "Official OpenAI API documentation and guides for developers."
+        },
+        {
+            "title": "💡 OpenAI Community",
+            "link": "https://community.openai.com/",
+            "snippet": "Join the OpenAI community for discussions, tips, and support."
+        }
+    ],
+    "gpt": [
+        {
+            "title": "🤖 GPT Models Overview",
+            "link": "https://platform.openai.com/docs/models",
+            "snippet": "Comprehensive guide to all GPT models and their capabilities."
+        }
+    ],
+    "python": [
+        {
+            "title": "🐍 Python Official Documentation",
+            "link": "https://docs.python.org/",
+            "snippet": "Official Python documentation and tutorials."
+        },
+        {
+            "title": "📚 Python Tutorial",
+            "link": "https://docs.python.org/3/tutorial/",
+            "snippet": "Learn Python programming from the official tutorial."
+        }
+    ]
+}
+
 # Custom middleware to capture MCP traffic
 class MCPLoggingMiddleware(BaseHTTPMiddleware):
     """Middleware to log all MCP requests and responses."""
@@ -67,6 +102,60 @@ class MCPLoggingMiddleware(BaseHTTPMiddleware):
         print(f"⏱️  Request processed in {processing_time:.3f}s")
         
         return response
+
+def get_custom_entries_for_query(query: str) -> List[Dict[str, Any]]:
+    """
+    Get custom entries based on the search query.
+    
+    Args:
+        query: The search query
+        
+    Returns:
+        List of custom entries to add
+    """
+    query_lower = query.lower()
+    custom_entries = []
+    
+    # Check for specific keywords and add relevant custom entries
+    for keyword, entries in CUSTOM_ENTRIES.items():
+        if keyword in query_lower:
+            custom_entries.extend(entries)
+    
+    # Add a general custom entry if no specific matches
+    if not custom_entries:
+        custom_entry = {
+            "title": "🔧 Enhanced Search Result",
+            "link": "https://example.com/enhanced-search",
+            "snippet": f"This is an enhanced search result for '{query}'. Custom entries can be configured based on keywords."
+        }
+        custom_entries.append(custom_entry)
+    
+    return custom_entries
+
+def enhance_search_results(results: List[Dict[str, Any]], query: str) -> List[Dict[str, Any]]:
+    """
+    Enhance search results with custom entries and modifications.
+    
+    Args:
+        results: Original search results
+        query: The search query
+        
+    Returns:
+        Enhanced search results
+    """
+    # Get custom entries for this query
+    custom_entries = get_custom_entries_for_query(query)
+    
+    # Add custom entries to the beginning
+    enhanced_results = custom_entries + results
+    
+    # Log the enhancement
+    print(f"🎯 Enhanced search results for '{query}':")
+    print(f"   • Original results: {len(results)}")
+    print(f"   • Custom entries added: {len(custom_entries)}")
+    print(f"   • Total enhanced results: {len(enhanced_results)}")
+    
+    return enhanced_results
 
 # --- Define the Web Search Tool with Enhanced Logging ---
 def search_web(query: str, num_results: int = 5) -> List[Dict[str, Any]]:
@@ -164,7 +253,7 @@ def search_web(query: str, num_results: int = 5) -> List[Dict[str, Any]]:
         return result
 
 # Create a FastAPI app
-app = FastAPI(title="Simple Search Server", description="A web search server with MCP logging")
+app = FastAPI(title="Enhanced Search Server", description="A web search server with MCP logging and result enhancement")
 
 # Add the MCP logging middleware
 app.add_middleware(MCPLoggingMiddleware)
@@ -172,7 +261,7 @@ app.add_middleware(MCPLoggingMiddleware)
 # Manual MCP endpoints
 @app.post("/mcp/tools/search_web")
 async def mcp_search_web(request: Request):
-    """MCP endpoint for search_web tool."""
+    """MCP endpoint for search_web tool with result enhancement."""
     try:
         body = await request.json()
         
@@ -192,18 +281,8 @@ async def mcp_search_web(request: Request):
         # Call the search function
         results = search_web(query, num_results)
         
-        # Hook: Add custom entry to search results
-        custom_entry = {
-            "title": "🔧 Custom Entry - Enhanced Search",
-            "link": "https://example.com/custom-entry",
-            "snippet": f"This is a custom entry added to your search for '{query}'. You can modify this to add any content you want!"
-        }
-        
-        # Add custom entry to the beginning of results
-        results.insert(0, custom_entry)
-        
-        # Log the modified results
-        print(f"🎯 Added custom entry to search results for query: '{query}'")
+        # Hook: Enhance search results with custom entries
+        enhanced_results = enhance_search_results(results, query)
         
         # Return in MCP format
         return {
@@ -213,7 +292,7 @@ async def mcp_search_web(request: Request):
                 "content": [
                     {
                         "type": "text",
-                        "text": json.dumps(results, indent=2)
+                        "text": json.dumps(enhanced_results, indent=2)
                     }
                 ]
             }
@@ -237,7 +316,7 @@ async def list_tools():
         "tools": [
             {
                 "name": "search_web",
-                "description": "Performs a web search using Google Custom Search API",
+                "description": "Performs a web search using Google Custom Search API with enhanced results",
                 "inputSchema": {
                     "type": "object",
                     "properties": {
@@ -250,18 +329,51 @@ async def list_tools():
         ]
     }
 
+@app.get("/custom-entries")
+async def get_custom_entries():
+    """Get the current custom entries configuration."""
+    return {
+        "custom_entries": CUSTOM_ENTRIES,
+        "description": "Custom entries are automatically added to search results based on keywords"
+    }
+
+@app.post("/custom-entries")
+async def add_custom_entry(request: Request):
+    """Add a new custom entry."""
+    try:
+        data = await request.json()
+        keyword = data.get("keyword")
+        entry = data.get("entry")
+        
+        if not keyword or not entry:
+            return {"error": "Missing keyword or entry"}
+        
+        if keyword not in CUSTOM_ENTRIES:
+            CUSTOM_ENTRIES[keyword] = []
+        
+        CUSTOM_ENTRIES[keyword].append(entry)
+        
+        return {
+            "message": f"Added custom entry for keyword '{keyword}'",
+            "custom_entries": CUSTOM_ENTRIES
+        }
+        
+    except Exception as e:
+        return {"error": str(e)}
+
 # Add a simple root endpoint for testing
 @app.get("/")
 def read_root():
     return {
-        "message": "Simple Search Server with MCP Logging is running", 
+        "message": "Enhanced Search Server with MCP Logging is running", 
         "endpoints": ["/mcp/tools/search_web"],
-        "logging": "enabled"
+        "logging": "enabled",
+        "enhancement": "enabled"
     }
 
 @app.get("/health")
 def health_check():
-    return {"status": "healthy", "logging": "enabled"}
+    return {"status": "healthy", "logging": "enabled", "enhancement": "enabled"}
 
 @app.get("/logs/stats")
 def get_log_stats():
@@ -281,7 +393,7 @@ def clear_logs():
 
 # --- Main execution block to run the MCP server ---
 if __name__ == "__main__":
-    print("🚀 Starting Simple Search Server with MCP Logging...")
+    print("🚀 Starting Enhanced Search Server with MCP Logging...")
     print("=" * 60)
     print("📊 MCP LOGGING FEATURES:")
     print("   • All requests and responses are logged")
@@ -290,6 +402,12 @@ if __name__ == "__main__":
     print("   • Logs are saved to 'mcp_logs/' directory")
     print("   • JSON structured logs for analysis")
     print("   • Real-time console output")
+    print()
+    print("🎯 RESULT ENHANCEMENT FEATURES:")
+    print("   • Custom entries added based on keywords")
+    print("   • Configurable custom entries")
+    print("   • Dynamic result enhancement")
+    print("   • Keyword-based matching")
     print()
     print("📁 LOG FILES:")
     print("   • mcp_requests.jsonl - All incoming requests")
@@ -305,9 +423,11 @@ if __name__ == "__main__":
     print("   • GET /logs/clear - Clear all logs")
     print("   • POST /mcp/tools/search_web - Web search tool")
     print("   • GET /mcp/tools - List available tools")
+    print("   • GET /custom-entries - View custom entries")
+    print("   • POST /custom-entries - Add custom entry")
     print()
     print("To run this server, use:")
-    print("uvicorn simple_search_server:app --host 0.0.0.0 --port 8000 --reload")
+    print("uvicorn enhanced_search_server:app --host 0.0.0.0 --port 8000 --reload")
     print()
     print("The server will be accessible at http://localhost:8000")
     print("Ensure your .env file with GOOGLE_API_KEY and GOOGLE_CSE_ID is in the same directory.")
