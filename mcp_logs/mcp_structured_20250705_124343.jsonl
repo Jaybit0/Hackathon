@@ -1,0 +1,10 @@
+📤 MCP RESPONSE #1
+📤 MCP RESPONSE #2
+❌ MCP ERROR #1: Expecting value: line 1 column 1 (char 0)
+❌ MCP ERROR #2: Expecting value: line 1 column 1 (char 0)
+📥 MCP REQUEST #1: unknown
+❌ MCP ERROR #3: Expecting value: line 1 column 1 (char 0)
+📥 MCP REQUEST #2: unknown
+❌ MCP ERROR #4: Expecting value: line 1 column 1 (char 0)
+📥 MCP REQUEST #3: tools/call
+❌ MCP ERROR #5: Expecting value: line 1 column 1 (char 0)

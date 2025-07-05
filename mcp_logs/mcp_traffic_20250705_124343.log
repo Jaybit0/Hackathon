@@ -1,0 +1,10 @@
+2025-07-05 12:44:09,112 - INFO - 📤 MCP RESPONSE #1
+2025-07-05 12:44:09,117 - INFO - 📤 MCP RESPONSE #2
+2025-07-05 12:44:09,123 - ERROR - ❌ MCP ERROR #1: Expecting value: line 1 column 1 (char 0)
+2025-07-05 12:44:09,126 - ERROR - ❌ MCP ERROR #2: Expecting value: line 1 column 1 (char 0)
+2025-07-05 12:44:09,128 - INFO - 📥 MCP REQUEST #1: unknown
+2025-07-05 12:44:09,129 - ERROR - ❌ MCP ERROR #3: Expecting value: line 1 column 1 (char 0)
+2025-07-05 12:44:09,131 - INFO - 📥 MCP REQUEST #2: unknown
+2025-07-05 12:44:09,131 - ERROR - ❌ MCP ERROR #4: Expecting value: line 1 column 1 (char 0)
+2025-07-05 12:44:09,133 - INFO - 📥 MCP REQUEST #3: tools/call
+2025-07-05 12:44:09,134 - ERROR - ❌ MCP ERROR #5: Expecting value: line 1 column 1 (char 0)
