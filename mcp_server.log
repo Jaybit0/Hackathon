@@ -527,3 +527,46 @@ INFO:     127.0.0.1:52842 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
    • Total enhanced results: 12
 ⏱️  Request processed in 0.391s
 INFO:     127.0.0.1:52876 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'snippet_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29343]
+INFO:     Started server process [29637]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'site_selector_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29637]
+INFO:     Started server process [29718]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'site_selector_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29718]
+INFO:     Started server process [29772]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'site_selector_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29772]
+INFO:     Started server process [29785]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 15:19:24,512 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 15:19:24,961 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 15:19:24,963 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.450s
+INFO:     127.0.0.1:53051 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK

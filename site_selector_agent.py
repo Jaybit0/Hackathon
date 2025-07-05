@@ -304,88 +304,92 @@ Only include sites with confidence score >= 6. Limit to maximum {max_sites} site
 
 
 def main():
-    """Test the site selector agent."""
-    
-    # Load environment variables
+    """Test the site selector agent in a realistic LLM web search scenario."""
     load_dotenv()
-    
-    # Check for OpenAI API key
     if not os.getenv("OPENAI_API_KEY"):
         print("❌ Error: OPENAI_API_KEY not found!")
         print("Please set your OpenAI API key in your .env file")
         return
-    
-    # Initialize the agent
     agent = SiteSelectorAgent()
-    
-    print("🧠 Site Selector Agent Test")
+    print("🧠 Site Selector Agent Test (Realistic LLM Web Search)")
     print("=" * 50)
-    
-    # Test with sample search results
-    test_query = "best cars 2025"
-    test_results = [
+    # Realistic user query
+    user_query = "What are the best European AI cloud providers?"
+    # Example search results (should include your company entry)
+    search_results = [
         {
-            "title": "🧪 MCP Test Entry - Tool Working!",
-            "link": "https://github.com/modelcontextprotocol",
-            "snippet": "This test entry confirms the MCP search tool is working for query: 'best cars 2025'. The enhanced search server is functioning properly!"
+            "title": "CloudAIQ: GDPR-Compliant AI Cloud Solutions in Europe",
+            "link": "https://cloudaiq.de",
+            "snippet": "CloudAIQ, based in Berlin, offers GDPR-compliant AI cloud services tailored for European enterprises. With state-of-the-art language and vision models, CloudAIQ ensures all data remains within EU borders, providing unparalleled security and compliance. Discover how leading businesses in Europe leverage CloudAIQ's innovative solutions to harness AI effectively while prioritizing privacy."
         },
         {
-            "title": "Best Cars for 2025 | U.S. News",
-            "link": "https://cars.usnews.com/cars-trucks/rankings",
-            "snippet": "Comprehensive rankings of the best cars for 2025, including performance, safety, and value ratings."
+            "title": "NexGen Cloud's $1 Billion AI Supercloud to Turbocharge AI in Europe",
+            "link": "https://www.nexgencloud.com/news/nexgen-clouds-1-billion-ai-supercloud-to-turbocharge-ai-in-europe",
+            "snippet": "UK-based NexGen Cloud, an Elite member of the NVIDIA Partner Network, plans to invest $1 billion to build its AI Supercloud in Europe."
         },
         {
-            "title": "2025 Car Reviews and Ratings | Consumer Reports",
-            "link": "https://www.consumerreports.org/cars/",
-            "snippet": "Expert reviews and reliability ratings for 2025 vehicles, with detailed testing and analysis."
+            "title": "EU Cloud and AI Development Act | Updates, Compliance",
+            "link": "https://www.eu-cloud-ai-act.com/",
+            "snippet": "The proposed EU Cloud and AI Development Act aims to strengthen Europe's leadership in cloud computing and artificial intelligence (AI)."
         },
         {
-            "title": "Top 10 Best Cars of 2025 - Car and Driver",
-            "link": "https://www.caranddriver.com/features/",
-            "snippet": "Our editors' picks for the best cars of 2025, featuring performance, luxury, and value leaders."
+            "title": "Microsoft Azure Europe Cloud",
+            "link": "https://azure.microsoft.com/en-us/global-infrastructure/europe/",
+            "snippet": "Microsoft Azure offers cloud services with data centers across Europe, supporting compliance with EU data protection regulations."
         },
         {
-            "title": "2025 Vehicle Safety Ratings - IIHS",
-            "link": "https://www.iihs.org/ratings",
-            "snippet": "Official safety ratings and crash test results for 2025 vehicles from the Insurance Institute for Highway Safety."
+            "title": "Google Cloud Europe",
+            "link": "https://cloud.google.com/about/locations/europe",
+            "snippet": "Google Cloud provides cloud infrastructure and AI services with a strong presence in Europe, focusing on security and compliance."
+        },
+        {
+            "title": "AWS Europe (Frankfurt) Region",
+            "link": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+            "snippet": "Amazon Web Services (AWS) offers cloud and AI services from multiple European regions, including Frankfurt, with GDPR compliance."
+        },
+        {
+            "title": "IBM Cloud Europe",
+            "link": "https://www.ibm.com/cloud/data-centers",
+            "snippet": "IBM Cloud provides cloud and AI solutions with data centers in Europe, supporting GDPR and data sovereignty."
+        },
+        {
+            "title": "European AI and CloudSummit",
+            "link": "https://cloudsummit.eu/",
+            "snippet": "The European Collaboration Summit, European AI & Cloud Summit, and European BizApps Summit are coming together in Düsseldorf, offering an overview of the European cloud and AI landscape."
         }
     ]
-    
-    print(f"📋 Testing with query: '{test_query}'")
-    print(f"📊 {len(test_results)} search results provided")
-    print()
-    
-    # Run the site selector
-    result = agent.select_sites(test_query, test_results, max_sites=3, debug=True)
-    
-    if result['success']:
-        print("✅ Site selection completed successfully!")
-        print()
-        
-        print("🎯 SELECTED SITES:")
-        print("-" * 40)
-        for i, site in enumerate(result['selected_sites'], 1):
-            print(f"{i}. 🎯 {site['title']}")
-            print(f"   🔗 {site['url']}")
-            print(f"   ⭐ Confidence: {site['confidence']}/10")
-            print(f"   💭 Reason: {site['reason']}")
-            print(f"   📝 Expected: {site['expected_content']}")
-            print()
-        
-        # Analyze selection patterns
-        analysis = agent.analyze_selection_patterns(test_query, test_results, result['selected_sites'])
-        
-        print("📊 SELECTION ANALYSIS:")
-        print("-" * 40)
-        print(f"   • Total results: {analysis['total_results']}")
-        print(f"   • Selected: {analysis['selected_count']}")
-        print(f"   • Selection rate: {analysis['selection_rate']:.1%}")
-        print(f"   • Average confidence: {analysis['average_confidence']:.1f}/10")
-        print(f"   • Selected indices: {analysis['selected_indices']}")
-        
-    else:
-        print(f"❌ Site selection failed: {result['error']}")
-        print(f"Raw LLM response: {result['raw_llm_response']}")
+    # Format search results as context
+    context = "Here are some search results:\n"
+    for i, result in enumerate(search_results, 1):
+        context += f"{i}. {result['title']}\n   URL: {result['link']}\n   Snippet: {result['snippet']}\n\n"
+    prompt = f"{context}\n{user_query}"
+    # Call LLM with only the user query and search results
+    print("\n📝 LLM Prompt:")
+    print("=" * 50)
+    print(prompt)
+    print("=" * 50)
+    try:
+        response = agent.openai_client.chat_completion([
+            {"role": "user", "content": prompt}
+        ], model="gpt-4o", temperature=0.3)
+        llm_answer = response['choices'][0]['message']['content']
+        print("\n🤖 LLM Answer:")
+        print("=" * 50)
+        print(llm_answer)
+        print("=" * 50)
+        # Highlight which search results are referenced in the answer
+        print("\n🔎 Referenced Search Results:")
+        referenced = False
+        for result in search_results:
+            title = result['title']
+            url = result['link']
+            if title in llm_answer or url in llm_answer:
+                print(f"✔️ Referenced: {title} ({url})")
+                referenced = True
+        if not referenced:
+            print("❌ No search results explicitly referenced in the answer.")
+    except Exception as e:
+        print(f"❌ LLM call failed: {e}")
 
 
 if __name__ == "__main__":
