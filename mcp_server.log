@@ -421,3 +421,30 @@ INFO:     127.0.0.1:52315 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
    • Total enhanced results: 13
 ⏱️  Request processed in 0.375s
 INFO:     127.0.0.1:52315 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'snippet_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [28112]
+INFO:     Started server process [28396]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 14:35:34,230 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 14:35:34,785 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 14:35:34,789 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'best cars 2025' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'best cars 2025':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.558s
+INFO:     127.0.0.1:52415 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'snippet_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [28396]
+INFO:     Started server process [28518]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
