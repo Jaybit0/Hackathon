@@ -684,3 +684,271 @@ INFO:     Application startup complete.
    • Total enhanced results: 12
 ⏱️  Request processed in 0.667s
 INFO:     127.0.0.1:53869 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [31349]
+INFO:     Started server process [31563]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'run_full_optimization.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [31563]
+INFO:     Started server process [31705]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'run_full_optimization.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [31705]
+INFO:     Started server process [31785]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 16:54:47,457 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 16:54:47,887 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 16:54:47,892 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.434s
+INFO:     127.0.0.1:54143 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [31785]
+INFO:     Started server process [31890]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 16:56:52,612 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 16:56:53,130 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 16:56:53,136 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.524s
+INFO:     127.0.0.1:54202 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'enhanced_search_server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [31890]
+INFO:     Started server process [32029]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [32029]
+INFO:     Started server process [32044]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 17:02:29,811 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 17:02:30,148 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 17:02:30,154 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.343s
+INFO:     127.0.0.1:54420 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'snippet_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [32044]
+INFO:     Started server process [32139]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'snippet_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [32139]
+INFO:     Started server process [32149]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 17:04:46,763 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 17:04:47,212 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 17:04:47,217 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.453s
+INFO:     127.0.0.1:54480 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 17:05:50,883 - INFO - 📥 MCP REQUEST #2: tools/call
+2025-07-05 17:05:51,212 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 17:05:51,216 - INFO - 📤 MCP RESPONSE #2
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.332s
+INFO:     127.0.0.1:54505 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'snippet_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [32149]
+INFO:     Started server process [32317]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'snippet_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [32317]
+INFO:     Started server process [32332]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 17:09:00,718 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 17:09:01,546 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 17:09:01,550 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'AI search analytics company europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'AI search analytics company europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.832s
+INFO:     127.0.0.1:54612 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [32332]
+INFO:     Started server process [32404]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [32404]
+INFO:     Started server process [32411]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 17:10:33,673 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 17:10:34,137 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 17:10:34,143 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'AI search analytics company europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'AI search analytics company europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.469s
+INFO:     127.0.0.1:54668 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'run_full_optimization.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [32411]
+INFO:     Started server process [32475]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 17:12:13,974 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 17:12:14,392 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 17:12:14,398 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'seo for llms' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'seo for llms':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.423s
+INFO:     127.0.0.1:54737 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 17:14:55,907 - INFO - 📥 MCP REQUEST #2: tools/call
+2025-07-05 17:14:56,485 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 17:14:56,491 - INFO - 📤 MCP RESPONSE #2
+🔍 Performing web search for query: 'AI search analytics company europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'AI search analytics company europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.583s
+INFO:     127.0.0.1:54786 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 17:17:45,941 - INFO - 📥 MCP REQUEST #3: tools/call
+2025-07-05 17:17:46,474 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 17:17:46,480 - INFO - 📤 MCP RESPONSE #3
+🔍 Performing web search for query: 'best plant based cookies berlin' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'best plant based cookies berlin':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.538s
+INFO:     127.0.0.1:54862 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [32475]
+INFO:     Started server process [32900]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [32900]
+INFO:     Started server process [32910]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 17:20:29,211 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 17:20:29,541 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 17:20:29,547 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'best plant based cookies berlin' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'best plant based cookies berlin':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.334s
+INFO:     127.0.0.1:54928 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [32910]
+INFO:     Started server process [33109]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [33109]
+INFO:     Started server process [33121]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 17:23:09,275 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 17:23:09,608 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 17:23:09,614 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'best plant based cookies berlin' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'best plant based cookies berlin':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.337s
+INFO:     127.0.0.1:55004 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK

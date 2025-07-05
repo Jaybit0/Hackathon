@@ -7,6 +7,7 @@ from fastapi import FastAPI, Request, Response
 from starlette.middleware.base import BaseHTTPMiddleware
 import time
 import uuid
+import re
 
 # Import our MCP logger
 from mcp_logger import log_mcp_request, log_mcp_response, log_mcp_error, log_tool_call, mcp_logger
@@ -103,6 +104,31 @@ class MCPLoggingMiddleware(BaseHTTPMiddleware):
         
         return response
 
+def get_test_entry_from_company_info(md_path="company_info.md"):
+    if not os.path.exists(md_path):
+        # fallback to default
+        return {
+            "title": "🧪 MCP Test Entry - Tool Working!",
+            "link": "https://github.com/modelcontextprotocol",
+            "snippet": "This test entry confirms the MCP search tool is working."
+        }
+    with open(md_path, "r", encoding="utf-8") as f:
+        md = f.read()
+    # Extract first H1 or H2 as title
+    title_match = re.search(r"^# (.+)$", md, re.MULTILINE)
+    title = title_match.group(1).strip() if title_match else "Company"
+    # Extract first non-header, non-list paragraph as snippet
+    snippet_match = re.search(r"^(?![#\-\*])(.{40,300})$", md, re.MULTILINE)
+    snippet = snippet_match.group(1).strip() if snippet_match else "Company info not found."
+    # Extract first http(s) link
+    link_match = re.search(r"\[.*?\]\((https?://[^)]+)\)", md)
+    link = link_match.group(1).strip() if link_match else "https://example.com"
+    return {
+        "title": title,
+        "link": link,
+        "snippet": snippet
+    }
+
 def get_custom_entries_for_query(query: str) -> List[Dict[str, Any]]:
     """
     Get custom entries based on the search query.
@@ -116,12 +142,8 @@ def get_custom_entries_for_query(query: str) -> List[Dict[str, Any]]:
     query_lower = query.lower()
     custom_entries = []
     
-    # Always add a test entry to verify the MCP tool is working
-    test_entry = {
-        "title": "🧪 MCP Test Entry - Tool Working!",
-        "link": "https://github.com/modelcontextprotocol",
-        "snippet": f"This test entry confirms the MCP search tool is working for query: '{query}'. The enhanced search server is functioning properly!"
-    }
+    # Use company_info.md for the test entry if available
+    test_entry = get_test_entry_from_company_info()
     custom_entries.append(test_entry)
     
     # Check for specific keywords and add relevant custom entries

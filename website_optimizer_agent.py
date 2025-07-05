@@ -31,7 +31,7 @@ def extract_website_content(html_path):
 
 def website_optimization_prompt(current_html, target_snippet):
     return f"""
-You are an expert in SEO and web content optimization. Your task is to update a company's website HTML so that Google or an LLM will generate a snippet as close as possible to the provided target snippet.
+You are an expert in SEO and web content optimization. Your task is to review a company's website HTML and propose content changes so that Google or an LLM will generate a snippet as close as possible to the provided target snippet.
 
 Here is the current website HTML:
 ---
@@ -41,7 +41,10 @@ Here is the current website HTML:
 Here is the target snippet we want Google/LLM to generate:
 {target_snippet}
 
-Please propose specific changes to the website's HTML (title, meta description, and main content) to maximize the chance that Google/LLM will use the target snippet. Output the new HTML (with your changes applied) and briefly explain your changes.
+Please propose specific content changes to the website's title, meta description, and main content (such as the first paragraph or key sections) to maximize the chance that Google/LLM will use the target snippet. Do NOT output a new HTML file. Instead, provide:
+- A list of suggested changes (e.g., "Update title to...", "Rewrite first paragraph as...")
+- The improved content blocks (title, meta description, main content) as plain text
+- A brief explanation of your changes
 """
 
 
@@ -63,10 +66,7 @@ def main():
     with open(html_path, "r", encoding="utf-8") as f:
         current_html = f.read()
     prompt = website_optimization_prompt(current_html, target_snippet)
-    print("\n📝 LLM Prompt:")
-    print("=" * 50)
-    print(prompt)
-    print("=" * 50)
+    print("\n📝 Sending prompt to LLM (HTML omitted for brevity)...")
     client = OpenAIClientWithMCP()
     try:
         response = client.chat_completion([
@@ -75,9 +75,31 @@ def main():
         llm_answer = response['choices'][0]['message']['content']
         print("\n🤖 LLM Proposed Changes:")
         print("=" * 50)
-        print(llm_answer)
+        # If the LLM output is very long (e.g., full HTML), truncate and warn
+        max_chars = 2000
+        max_lines = 40
+        lines = llm_answer.splitlines()
+        if len(llm_answer) > max_chars or len(lines) > max_lines:
+            print("[Output truncated. Showing first part only.]")
+            print("\n".join(lines[:max_lines]))
+            print(f"\n... [truncated, total {len(lines)} lines, {len(llm_answer)} chars] ...")
+        else:
+            print(llm_answer)
         print("=" * 50)
-        # Optionally, parse and apply changes to HTML here
+        # Save the LLM's proposed changes to a markdown file
+        with open("proposed_website_changes.md", "w", encoding="utf-8") as f:
+            f.write("# Proposed Website Content Changes\n\n")
+            f.write(llm_answer.strip() + "\n")
+        print("✅ Saved proposed changes to proposed_website_changes.md")
+        # Also save the optimal snippet if available
+        if os.path.exists("target_snippet.txt"):
+            with open("target_snippet.txt", "r", encoding="utf-8") as f_snip:
+                snippet = f_snip.read().strip()
+            if snippet:
+                with open("proposed_website_changes.md", "a", encoding="utf-8") as f:
+                    f.write("\n---\n\n# Optimal Snippet\n\n")
+                    f.write(snippet + "\n")
+                print("✅ Saved optimal snippet to proposed_website_changes.md")
     except Exception as e:
         print(f"❌ LLM call failed: {e}")
 

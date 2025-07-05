@@ -9,6 +9,7 @@ import os
 import json
 from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
+import sys
 
 # Import OpenAI client
 from openai_client_with_mcp import OpenAIClientWithMCP, OpenAIError
@@ -169,17 +170,21 @@ def main():
     from site_selector_agent import SiteSelectorAgent
     agent = SiteSelectorAgent()
     optimizer = SnippetOptimizerAgent()
-    query = "cloud AI in Europe"
+    # Accept query as command-line argument or prompt
+    if len(sys.argv) > 1:
+        query = " ".join(sys.argv[1:]).strip()
+    else:
+        query = input("Enter the search query to optimize for: ").strip()
     print(f"🔍 Query: {query}")
     # Get search results from MCP server
     search_results = agent.openai_client.mcp_client.search_web(query, num_results=10)
     # Find MCP Test Entry index
     mcp_entry_index = 0
     for i, r in enumerate(search_results):
-        if "MCP Test Entry" in r.get("title", ""):
+        if "MCP Test Entry" in r.get("title", "") or "Test Entry" in r.get("title", ""):
             mcp_entry_index = i
             break
-    max_rounds = 5
+    max_rounds = 10
     for round_num in range(1, max_rounds + 1):
         print(f"\n=== OPTIMIZATION ROUND {round_num} ===")
         print(f"🧠 Running site selector...")
