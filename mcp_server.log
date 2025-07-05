@@ -196,3 +196,124 @@ INFO:     127.0.0.1:51887 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
    • Total enhanced results: 7
 ⏱️  Request processed in 0.800s
 INFO:     127.0.0.1:51889 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'intelligent_search_tool.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25805]
+INFO:     Started server process [26137]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'interactive_intelligent_search.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [26137]
+INFO:     Started server process [26169]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'interactive_intelligent_search.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [26169]
+INFO:     Started server process [26178]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'test_intelligent_search.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [26178]
+INFO:     Started server process [26222]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 14:11:42,635 - INFO - 📤 MCP RESPONSE #1
+⏱️  Request processed in 0.001s
+INFO:     127.0.0.1:52044 - "GET /health HTTP/1.1" 200 OK
+2025-07-05 14:11:42,645 - INFO - 📤 MCP RESPONSE #2
+⏱️  Request processed in 0.000s
+INFO:     127.0.0.1:52046 - "GET /health HTTP/1.1" 200 OK
+2025-07-05 14:11:43,505 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 14:11:43,835 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 14:11:43,839 - INFO - 📤 MCP RESPONSE #3
+🔍 Performing web search for query: 'OpenAI GPT-4 features' with 2 results...
+✅ Found 2 search results.
+🎯 Enhanced search results for 'OpenAI GPT-4 features':
+   • Original results: 2
+   • Custom entries added: 5
+   • Total enhanced results: 7
+⏱️  Request processed in 0.333s
+INFO:     127.0.0.1:52051 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 14:11:45,851 - INFO - 📥 MCP REQUEST #2: tools/call
+2025-07-05 14:11:46,343 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 14:11:46,347 - INFO - 📤 MCP RESPONSE #4
+🔍 Performing web search for query: 'Python programming tips' with 2 results...
+✅ Found 2 search results.
+🎯 Enhanced search results for 'Python programming tips':
+   • Original results: 2
+   • Custom entries added: 4
+   • Total enhanced results: 6
+⏱️  Request processed in 0.496s
+INFO:     127.0.0.1:52051 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 14:11:48,356 - INFO - 📥 MCP REQUEST #3: tools/call
+2025-07-05 14:11:48,666 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 14:11:48,671 - INFO - 📤 MCP RESPONSE #5
+🔍 Performing web search for query: 'Machine learning basics' with 2 results...
+✅ Found 2 search results.
+🎯 Enhanced search results for 'Machine learning basics':
+   • Original results: 2
+   • Custom entries added: 2
+   • Total enhanced results: 4
+⏱️  Request processed in 0.314s
+INFO:     127.0.0.1:52051 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 14:11:53,542 - INFO - 📤 MCP RESPONSE #6
+⏱️  Request processed in 0.000s
+INFO:     127.0.0.1:52062 - "GET /mcp/tools HTTP/1.1" 200 OK
+2025-07-05 14:12:06,402 - INFO - 📤 MCP RESPONSE #7
+⏱️  Request processed in 0.001s
+INFO:     127.0.0.1:52075 - "GET /health HTTP/1.1" 200 OK
+2025-07-05 14:12:06,405 - INFO - 📥 MCP REQUEST #4: tools/call
+2025-07-05 14:12:07,011 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 14:12:07,015 - INFO - 📤 MCP RESPONSE #8
+🔍 Performing web search for query: 'What is machine learning?' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'What is machine learning?':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.609s
+INFO:     127.0.0.1:52076 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 14:12:22,892 - INFO - 📥 MCP REQUEST #5: tools/call
+2025-07-05 14:12:23,507 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 14:12:23,511 - INFO - 📤 MCP RESPONSE #9
+🔍 Performing web search for query: 'Python programming basics' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'Python programming basics':
+   • Original results: 10
+   • Custom entries added: 4
+   • Total enhanced results: 14
+⏱️  Request processed in 0.618s
+INFO:     127.0.0.1:52082 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 14:12:42,870 - INFO - 📥 MCP REQUEST #6: tools/call
+2025-07-05 14:12:43,455 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 14:12:43,459 - INFO - 📤 MCP RESPONSE #10
+🔍 Performing web search for query: 'OpenAI GPT features' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'OpenAI GPT features':
+   • Original results: 10
+   • Custom entries added: 5
+   • Total enhanced results: 15
+⏱️  Request processed in 0.588s
+INFO:     127.0.0.1:52088 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 14:13:35,582 - INFO - 📥 MCP REQUEST #7: tools/call
+2025-07-05 14:13:36,171 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 14:13:36,176 - INFO - 📤 MCP RESPONSE #11
+🔍 Performing web search for query: 'best cars 2025' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'best cars 2025':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.593s
+INFO:     127.0.0.1:52097 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
