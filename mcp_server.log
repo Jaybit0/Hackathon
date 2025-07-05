@@ -497,3 +497,33 @@ INFO:     Application startup complete.
    • Total enhanced results: 12
 ⏱️  Request processed in 0.570s
 INFO:     127.0.0.1:52744 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'snippet_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29070]
+INFO:     Started server process [29343]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 15:08:26,577 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 15:08:27,050 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 15:08:27,054 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.477s
+INFO:     127.0.0.1:52842 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 15:10:51,901 - INFO - 📥 MCP REQUEST #2: tools/call
+2025-07-05 15:10:52,288 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 15:10:52,292 - INFO - 📤 MCP RESPONSE #2
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.391s
+INFO:     127.0.0.1:52876 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK

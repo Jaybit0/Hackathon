@@ -184,12 +184,30 @@ def main():
         print(f"\n=== OPTIMIZATION ROUND {round_num} ===")
         print(f"🧠 Running site selector...")
         selector_output = agent.select_sites(query, search_results, max_sites=3, debug=False)
-        # Check if MCP Test Entry is selected
         selected_indices = [s.get('original_index', -1) for s in selector_output.get('selected_sites', [])]
+        selected_titles = [s.get('title', '') for s in selector_output.get('selected_sites', [])]
+        selected_urls = [s.get('url', '') for s in selector_output.get('selected_sites', [])]
+        print("Selected indices:", selected_indices)
+        print("Selected titles:", selected_titles)
+        print("Selected URLs:", selected_urls)
+        mcp_title = search_results[mcp_entry_index].get('title', '')
+        mcp_url = search_results[mcp_entry_index].get('link', '')
+        # Check by index, title, or URL
+        selected = False
         if mcp_entry_index in selected_indices:
+            selected = True
+        elif any(mcp_title == t for t in selected_titles):
+            selected = True
+        elif any(mcp_url == u for u in selected_urls):
+            selected = True
+        if selected:
             print(f"🎉 MCP Test Entry SELECTED in round {round_num}!")
             for s in selector_output['selected_sites']:
-                if s.get('original_index', -1) == mcp_entry_index:
+                if (
+                    s.get('original_index', -1) == mcp_entry_index or
+                    s.get('title', '') == mcp_title or
+                    s.get('url', '') == mcp_url
+                ):
                     print(json.dumps(s, indent=2))
             break
         else:
