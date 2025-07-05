@@ -209,6 +209,20 @@ def main():
                     s.get('url', '') == mcp_url
                 ):
                     print(json.dumps(s, indent=2))
+                    # Robustly write the selected snippet to target_snippet.txt
+                    snippet_text = s.get('snippet') or s.get('expected_content') or ''
+                    if not snippet_text:
+                        # Fallback: use the snippet from the MCP Test Entry in search_results
+                        mcp_snippet = search_results[mcp_entry_index].get('snippet', '')
+                        print("WARNING: No snippet found in selected site. Falling back to MCP Test Entry snippet:", mcp_snippet)
+                        snippet_text = mcp_snippet
+                    else:
+                        print("Selected snippet to write:", snippet_text)
+                    with open("target_snippet.txt", "w", encoding="utf-8") as f:
+                        f.write(snippet_text)
+                    print("\n🚀 Invoking website_optimizer_agent.py to propose website changes...")
+                    import subprocess
+                    subprocess.run(["python", "website_optimizer_agent.py"])
             break
         else:
             print(f"❌ MCP Test Entry NOT selected. Optimizing...")

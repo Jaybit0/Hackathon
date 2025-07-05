@@ -570,3 +570,117 @@ INFO:     Application startup complete.
    • Total enhanced results: 12
 ⏱️  Request processed in 0.450s
 INFO:     127.0.0.1:53051 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29785]
+INFO:     Started server process [30660]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'snippet_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [30660]
+INFO:     Started server process [30716]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 16:21:03,188 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 16:21:03,624 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 16:21:03,629 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.441s
+INFO:     127.0.0.1:53571 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 16:21:37,553 - INFO - 📥 MCP REQUEST #2: tools/call
+2025-07-05 16:21:37,933 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 16:21:37,937 - INFO - 📤 MCP RESPONSE #2
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.383s
+INFO:     127.0.0.1:53591 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [30716]
+INFO:     Started server process [30829]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 16:22:28,362 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 16:22:28,684 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 16:22:28,689 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.326s
+INFO:     127.0.0.1:53636 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 16:33:21,273 - INFO - 📥 MCP REQUEST #2: tools/call
+2025-07-05 16:33:21,621 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 16:33:21,627 - INFO - 📤 MCP RESPONSE #2
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.353s
+INFO:     127.0.0.1:53738 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'snippet_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [30829]
+INFO:     Started server process [31215]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 16:36:23,400 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 16:36:23,793 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 16:36:23,798 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.396s
+INFO:     127.0.0.1:53815 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [31215]
+INFO:     Started server process [31302]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'website_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [31302]
+INFO:     Started server process [31349]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 16:39:29,309 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 16:39:29,970 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 16:39:29,977 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.667s
+INFO:     127.0.0.1:53869 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
