@@ -28,7 +28,8 @@ class SnippetOptimizerAgent:
         search_results: List[Dict[str, Any]],
         selector_output: Dict[str, Any],
         mcp_entry_index: int = 0,
-        debug: bool = False
+        debug: bool = False,
+        company_info_path: str = "company_info.md"
     ) -> Dict[str, Any]:
         """
         Propose a new version of the MCP Test Entry to maximize its selection likelihood.
@@ -38,17 +39,26 @@ class SnippetOptimizerAgent:
             selector_output: Output from the site selector (selected_sites, reasons, etc.)
             mcp_entry_index: Index of the MCP Test Entry in search_results
             debug: Print debug info
+            company_info_path: Path to the company info markdown file
         Returns:
             Dict with new MCP Test Entry, reasoning, and LLM output
         """
         mcp_entry = search_results[mcp_entry_index]
         selected_sites = selector_output.get('selected_sites', [])
         
+        # Read company info file
+        try:
+            with open(company_info_path, "r", encoding="utf-8") as f:
+                company_info = f.read()
+        except Exception as e:
+            print(f"❌ Failed to read company info file: {e}")
+            company_info = ""
+        
         # Format context for LLM
         formatted_results = self._format_search_results(search_results)
         formatted_selection = self._format_selected_sites(selected_sites)
         
-        prompt = self._create_optimization_prompt(query, formatted_results, formatted_selection, mcp_entry, mcp_entry_index)
+        prompt = self._create_optimization_prompt(query, formatted_results, formatted_selection, mcp_entry, mcp_entry_index, company_info)
         
         if debug:
             print("\n📝 Optimization Prompt:")
@@ -93,7 +103,7 @@ class SnippetOptimizerAgent:
                 'error': str(e)
             }
 
-    def _create_optimization_prompt(self, query, formatted_results, formatted_selection, mcp_entry, mcp_entry_index):
+    def _create_optimization_prompt(self, query, formatted_results, formatted_selection, mcp_entry, mcp_entry_index, company_info):
         return f"""
 You are an expert at optimizing search result snippets to maximize their selection by an LLM-based site selector.
 
@@ -106,6 +116,12 @@ Here are the search results (including a special MCP Test Entry at index {mcp_en
 The site selector LLM was asked to select the most valuable sites. Here are the sites it selected and its reasoning:
 
 {formatted_selection}
+
+You may ONLY use information from the following company info file. All content you generate must be truthful and based on this file:
+
+---
+{company_info}
+---
 
 Your task:
 - Analyze why the MCP Test Entry at index {mcp_entry_index} was or was not selected.
@@ -153,7 +169,7 @@ def main():
     from site_selector_agent import SiteSelectorAgent
     agent = SiteSelectorAgent()
     optimizer = SnippetOptimizerAgent()
-    query = "best cars 2025"
+    query = "cloud AI in Europe"
     print(f"🔍 Query: {query}")
     # Get search results from MCP server
     search_results = agent.openai_client.mcp_client.search_web(query, num_results=10)

@@ -448,3 +448,52 @@ INFO:     Finished server process [28396]
 INFO:     Started server process [28518]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+2025-07-05 14:39:52,679 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 14:39:53,243 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 14:39:53,247 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'best cars 2025' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'best cars 2025':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.567s
+INFO:     127.0.0.1:52497 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'snippet_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [28518]
+INFO:     Started server process [29038]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 15:03:44,018 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 15:03:44,580 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 15:03:44,583 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'best cars 2025' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'best cars 2025':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.565s
+INFO:     127.0.0.1:52715 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'snippet_optimizer_agent.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29038]
+INFO:     Started server process [29070]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 15:04:21,596 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 15:04:22,164 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 15:04:22,167 - INFO - 📤 MCP RESPONSE #1
+🔍 Performing web search for query: 'cloud AI in Europe' with 10 results...
+✅ Found 10 search results.
+🎯 Enhanced search results for 'cloud AI in Europe':
+   • Original results: 10
+   • Custom entries added: 2
+   • Total enhanced results: 12
+⏱️  Request processed in 0.570s
+INFO:     127.0.0.1:52744 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
