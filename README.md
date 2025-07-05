@@ -1,7 +1,4 @@
-# Start
-```bash
-python -m uvicorn simple_search_server:app --host 0.0.0.0 --port 8000 --reload
-```
+
 # AI-Powered SEO Optimization Engine
 
 This repository contains the architecture and conceptual framework for an innovative LLM-powered engine designed to optimize website content for maximum visibility and ranking in Large Language Model (LLM) search responses. The core idea is to leverage multiple LLMs in a pipeline to first understand high-ranking content, and then propose actionable changes to our own site to achieve a #1 ranking.
@@ -34,6 +31,8 @@ In the evolving landscape of search, where **LLMs increasingly influence how use
 
 The ultimate goal is to create a **closed-loop system** that continuously improves our site's content for LLM-driven search, ensuring we always present the most compelling and authoritative information.
 
+
+![image](https://github.com/user-attachments/assets/a6b94e34-1f43-451c-bf14-6ab85613292d)
 ---
 
 ## How It Works
@@ -109,5 +108,8 @@ We welcome contributions to this project! Please see `CONTRIBUTING.md` (to be cr
 ## License
 
 This project is licensed under the [MIT License](LICENSE) (to be created).
+# Get Start
+```bash
+python -m uvicorn simple_search_server:app --host 0.0.0.0 --port 8000 --reload
+```
 
-![image](https://github.com/user-attachments/assets/a6b94e34-1f43-451c-bf14-6ab85613292d)
