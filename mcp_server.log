@@ -1,0 +1,198 @@
+INFO:     Will watch for changes in these directories: ['/Users/janniklindemann/Dev/Hackathon']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [25555] using StatReload
+INFO:     Started server process [25561]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 13:50:47,484 - INFO - 📤 MCP RESPONSE #1
+⏱️  Request processed in 0.001s
+INFO:     127.0.0.1:51763 - "GET /health HTTP/1.1" 200 OK
+2025-07-05 13:50:47,495 - INFO - 📤 MCP RESPONSE #2
+⏱️  Request processed in 0.001s
+INFO:     127.0.0.1:51765 - "GET /health HTTP/1.1" 200 OK
+2025-07-05 13:50:48,511 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 13:50:49,090 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 13:50:49,092 - INFO - 📤 MCP RESPONSE #3
+🔍 Performing web search for query: 'OpenAI GPT-4 features' with 2 results...
+✅ Found 2 search results.
+🎯 Enhanced search results for 'OpenAI GPT-4 features':
+   • Original results: 2
+   • Custom entries added: 3
+   • Total enhanced results: 5
+⏱️  Request processed in 0.580s
+INFO:     127.0.0.1:51770 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 13:50:51,099 - INFO - 📥 MCP REQUEST #2: tools/call
+2025-07-05 13:50:51,570 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 13:50:51,572 - INFO - 📤 MCP RESPONSE #4
+🔍 Performing web search for query: 'Python programming tips' with 2 results...
+✅ Found 2 search results.
+🎯 Enhanced search results for 'Python programming tips':
+   • Original results: 2
+   • Custom entries added: 2
+   • Total enhanced results: 4
+⏱️  Request processed in 0.473s
+INFO:     127.0.0.1:51770 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 13:50:53,592 - INFO - 📥 MCP REQUEST #3: tools/call
+2025-07-05 13:50:53,939 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 13:50:53,940 - INFO - 📤 MCP RESPONSE #5
+🔍 Performing web search for query: 'Machine learning basics' with 2 results...
+✅ Found 2 search results.
+🎯 Enhanced search results for 'Machine learning basics':
+   • Original results: 2
+   • Custom entries added: 1
+   • Total enhanced results: 3
+⏱️  Request processed in 0.347s
+INFO:     127.0.0.1:51770 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 13:51:00,750 - INFO - 📤 MCP RESPONSE #6
+⏱️  Request processed in 0.000s
+INFO:     127.0.0.1:51782 - "GET /mcp/tools HTTP/1.1" 200 OK
+2025-07-05 13:51:08,258 - INFO - 📥 MCP REQUEST #4: tools/call
+2025-07-05 13:51:08,598 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 13:51:08,601 - INFO - 📤 MCP RESPONSE #7
+🔍 Performing web search for query: 'best car 2025' with 5 results...
+✅ Found 5 search results.
+🎯 Enhanced search results for 'best car 2025':
+   • Original results: 5
+   • Custom entries added: 1
+   • Total enhanced results: 6
+⏱️  Request processed in 0.343s
+INFO:     127.0.0.1:51787 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 13:51:34,303 - INFO - 📥 MCP REQUEST #5: tools/call
+2025-07-05 13:51:34,859 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 13:51:34,862 - INFO - 📤 MCP RESPONSE #8
+🔍 Performing web search for query: 'best llm 2025' with 5 results...
+✅ Found 5 search results.
+🎯 Enhanced search results for 'best llm 2025':
+   • Original results: 5
+   • Custom entries added: 1
+   • Total enhanced results: 6
+⏱️  Request processed in 0.558s
+INFO:     127.0.0.1:51792 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'enhanced_search_server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25561]
+INFO:     Started server process [25690]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'enhanced_search_server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25690]
+INFO:     Started server process [25723]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'enhanced_search_server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25723]
+INFO:     Started server process [25734]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'enhanced_search_server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25734]
+INFO:     Started server process [25745]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'enhanced_search_server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25745]
+INFO:     Started server process [25746]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'enhanced_search_server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25746]
+INFO:     Started server process [25758]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'test_mcp_working.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25758]
+INFO:     Started server process [25774]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'enhanced_search_server.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25774]
+INFO:     Started server process [25805]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-07-05 13:55:02,469 - INFO - 📤 MCP RESPONSE #1
+⏱️  Request processed in 0.001s
+INFO:     127.0.0.1:51869 - "GET /health HTTP/1.1" 200 OK
+2025-07-05 13:55:02,477 - INFO - 📤 MCP RESPONSE #2
+⏱️  Request processed in 0.000s
+INFO:     127.0.0.1:51871 - "GET /health HTTP/1.1" 200 OK
+2025-07-05 13:55:03,329 - INFO - 📥 MCP REQUEST #1: tools/call
+2025-07-05 13:55:03,846 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 13:55:03,851 - INFO - 📤 MCP RESPONSE #3
+🔍 Performing web search for query: 'OpenAI GPT-4 features' with 2 results...
+✅ Found 2 search results.
+🎯 Enhanced search results for 'OpenAI GPT-4 features':
+   • Original results: 2
+   • Custom entries added: 5
+   • Total enhanced results: 7
+⏱️  Request processed in 0.521s
+INFO:     127.0.0.1:51876 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 13:55:05,863 - INFO - 📥 MCP REQUEST #2: tools/call
+2025-07-05 13:55:06,269 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 13:55:06,272 - INFO - 📤 MCP RESPONSE #4
+🔍 Performing web search for query: 'Python programming tips' with 2 results...
+✅ Found 2 search results.
+🎯 Enhanced search results for 'Python programming tips':
+   • Original results: 2
+   • Custom entries added: 4
+   • Total enhanced results: 6
+⏱️  Request processed in 0.408s
+INFO:     127.0.0.1:51876 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 13:55:08,283 - INFO - 📥 MCP REQUEST #3: tools/call
+2025-07-05 13:55:08,766 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 13:55:08,771 - INFO - 📤 MCP RESPONSE #5
+🔍 Performing web search for query: 'Machine learning basics' with 2 results...
+✅ Found 2 search results.
+🎯 Enhanced search results for 'Machine learning basics':
+   • Original results: 2
+   • Custom entries added: 2
+   • Total enhanced results: 4
+⏱️  Request processed in 0.487s
+INFO:     127.0.0.1:51876 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 13:55:13,238 - INFO - 📤 MCP RESPONSE #6
+⏱️  Request processed in 0.000s
+INFO:     127.0.0.1:51886 - "GET /mcp/tools HTTP/1.1" 200 OK
+2025-07-05 13:55:20,150 - INFO - 📥 MCP REQUEST #4: tools/call
+2025-07-05 13:55:20,535 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 13:55:20,539 - INFO - 📤 MCP RESPONSE #7
+🔍 Performing web search for query: 'best car' with 5 results...
+✅ Found 5 search results.
+🎯 Enhanced search results for 'best car':
+   • Original results: 5
+   • Custom entries added: 2
+   • Total enhanced results: 7
+⏱️  Request processed in 0.388s
+INFO:     127.0.0.1:51887 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK
+2025-07-05 13:55:56,809 - INFO - 📥 MCP REQUEST #5: tools/call
+2025-07-05 13:55:57,605 - INFO - 🔧 TOOL CALL: search_web
+2025-07-05 13:55:57,610 - INFO - 📤 MCP RESPONSE #8
+🔍 Performing web search for query: 'best SUV in 2025 in germany' with 5 results...
+✅ Found 5 search results.
+🎯 Enhanced search results for 'best SUV in 2025 in germany':
+   • Original results: 5
+   • Custom entries added: 2
+   • Total enhanced results: 7
+⏱️  Request processed in 0.800s
+INFO:     127.0.0.1:51889 - "POST /mcp/tools/search_web HTTP/1.1" 200 OK

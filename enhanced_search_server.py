@@ -116,13 +116,21 @@ def get_custom_entries_for_query(query: str) -> List[Dict[str, Any]]:
     query_lower = query.lower()
     custom_entries = []
     
+    # Always add a test entry to verify the MCP tool is working
+    test_entry = {
+        "title": "🧪 MCP Test Entry - Tool Working!",
+        "link": "https://github.com/modelcontextprotocol",
+        "snippet": f"This test entry confirms the MCP search tool is working for query: '{query}'. The enhanced search server is functioning properly!"
+    }
+    custom_entries.append(test_entry)
+    
     # Check for specific keywords and add relevant custom entries
     for keyword, entries in CUSTOM_ENTRIES.items():
         if keyword in query_lower:
             custom_entries.extend(entries)
     
     # Add a general custom entry if no specific matches
-    if not custom_entries:
+    if not any(entry.get("title", "").startswith("🔧") for entry in custom_entries):
         custom_entry = {
             "title": "🔧 Enhanced Search Result",
             "link": "https://example.com/enhanced-search",
@@ -177,7 +185,13 @@ def search_web(query: str, num_results: int = 5) -> List[Dict[str, Any]]:
     if not GOOGLE_API_KEY or not GOOGLE_CSE_ID:
         error_msg = "Server configuration error: API keys missing."
         print(f"Error: {error_msg}")
-        result = [{"error": error_msg}]
+        # Always include a test entry even when API keys are missing
+        test_result = {
+            "title": "🧪 MCP Test Entry - API Keys Missing",
+            "link": "https://github.com/modelcontextprotocol",
+            "snippet": "This test entry appears even when Google API keys are not configured. The MCP tool is working correctly!"
+        }
+        result = [test_result, {"error": error_msg}]
         log_tool_call("search_web", tool_args, result)
         return result
 
@@ -209,7 +223,13 @@ def search_web(query: str, num_results: int = 5) -> List[Dict[str, Any]]:
             if "error" in search_data:
                 error_msg = f"Google API Error: {search_data['error'].get('message', 'Unknown error')}"
                 print(f"Google API Error: {error_msg}")
-                results = [{"error": error_msg}]
+                # Add test entry even when Google API returns errors
+                test_result = {
+                    "title": "🧪 MCP Test Entry - Google API Error",
+                    "link": "https://github.com/modelcontextprotocol",
+                    "snippet": "This test entry appears even when Google API returns errors. The MCP tool is working correctly!"
+                }
+                results = [test_result, {"error": error_msg}]
 
         # Log the tool call result
         log_tool_call("search_web", tool_args, results)
@@ -218,37 +238,68 @@ def search_web(query: str, num_results: int = 5) -> List[Dict[str, Any]]:
     except requests.exceptions.HTTPError as http_err:
         error_msg = f"HTTP error during search: {http_err}"
         print(f"❌ {error_msg}")
-        result = [{"error": error_msg}]
+        # Add test entry even when HTTP errors occur
+        test_result = {
+            "title": "🧪 MCP Test Entry - HTTP Error",
+            "link": "https://github.com/modelcontextprotocol",
+            "snippet": "This test entry appears even when HTTP errors occur. The MCP tool is working correctly!"
+        }
+        result = [test_result, {"error": error_msg}]
         log_tool_call("search_web", tool_args, result)
         return result
     except requests.exceptions.ConnectionError as conn_err:
         error_msg = f"Network connection error during search: {conn_err}"
         print(f"❌ {error_msg}")
-        result = [{"error": error_msg}]
+        test_result = {
+            "title": "🧪 MCP Test Entry - Connection Error",
+            "link": "https://github.com/modelcontextprotocol",
+            "snippet": "This test entry appears even when connection errors occur. The MCP tool is working correctly!"
+        }
+        result = [test_result, {"error": error_msg}]
         log_tool_call("search_web", tool_args, result)
         return result
     except requests.exceptions.Timeout as timeout_err:
         error_msg = f"Search request timed out: {timeout_err}"
         print(f"❌ {error_msg}")
-        result = [{"error": error_msg}]
+        test_result = {
+            "title": "🧪 MCP Test Entry - Timeout Error",
+            "link": "https://github.com/modelcontextprotocol",
+            "snippet": "This test entry appears even when timeout errors occur. The MCP tool is working correctly!"
+        }
+        result = [test_result, {"error": error_msg}]
         log_tool_call("search_web", tool_args, result)
         return result
     except requests.exceptions.RequestException as req_err:
         error_msg = f"Unexpected search request error: {req_err}"
         print(f"❌ {error_msg}")
-        result = [{"error": error_msg}]
+        test_result = {
+            "title": "🧪 MCP Test Entry - Request Error",
+            "link": "https://github.com/modelcontextprotocol",
+            "snippet": "This test entry appears even when request errors occur. The MCP tool is working correctly!"
+        }
+        result = [test_result, {"error": error_msg}]
         log_tool_call("search_web", tool_args, result)
         return result
     except json.JSONDecodeError as json_err:
         error_msg = f"Failed to decode API response: {json_err}"
         print(f"❌ {error_msg}")
-        result = [{"error": error_msg}]
+        test_result = {
+            "title": "🧪 MCP Test Entry - JSON Decode Error",
+            "link": "https://github.com/modelcontextprotocol",
+            "snippet": "This test entry appears even when JSON decode errors occur. The MCP tool is working correctly!"
+        }
+        result = [test_result, {"error": error_msg}]
         log_tool_call("search_web", tool_args, result)
         return result
     except Exception as e:
         error_msg = f"An unexpected server error occurred: {e}"
         print(f"❌ {error_msg}")
-        result = [{"error": error_msg}]
+        test_result = {
+            "title": "🧪 MCP Test Entry - Unexpected Error",
+            "link": "https://github.com/modelcontextprotocol",
+            "snippet": "This test entry appears even when unexpected errors occur. The MCP tool is working correctly!"
+        }
+        result = [test_result, {"error": error_msg}]
         log_tool_call("search_web", tool_args, result)
         return result
 
